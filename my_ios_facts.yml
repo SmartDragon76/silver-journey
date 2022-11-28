@@ -1,0 +1,14 @@
+---
+- name: Gather basic facts
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+  - name: get version
+    ios_command:
+      commands: show version
+    register: version
+
+  - name: display version
+    debug:
+      var:  version['stdout_lines'][0]
