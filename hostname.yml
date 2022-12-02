@@ -1,0 +1,19 @@
+---
+- name: Update Hostname
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+  
+  - name: Add hostname
+    cisco.nxos.nxos_config:
+      lines: 
+        - hostname Rome
+      save_when: always
+
+
+
+
+
+      
+...
